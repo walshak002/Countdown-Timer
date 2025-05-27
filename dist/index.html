@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Countdown</title>
+</head>
+<!-- Create a countdown timer using HTML, CSS, and JavaScript.
+1. User should put the time (in minutes) and click start
+2. The timer starts counting down. It should stop when the time ends -->
+<body class="bg-gradient-to-r from-indigo-500 to-sky-400">
+    <div class="flex justify-center mt-28 rounded-2xl w-[500px] h-[500px] bg-blue-500 border-2 mx-auto">
+    <div class="text-center">
+        <div>
+            <img src="/img/clock-removebg-preview.png" alt="">
+        </div>
+        <h1 class="text-4xl font-extrabold font-serif bg-clip-text">Start Countdown</h1>
+        <!-- <h1 id="timer" class="mt-7"><span class="py-4 bg-gradient-to-l from-purple-600 to-pink-600 rounded-full px-4 border-2 text-white font-bold border-black">00</span> <span class="text-3xl">:</span> <span class="py-4 px-4  bg-gradient-to-l from-purple-600 to-pink-600 font-bold text-white border-2 rounded-full border-black">00</span></h1>
+          -->
+
+    <h1 id="timer" class="mt-7">
+        <span id="minutes" class="py-4 bg-gradient-to-l from-purple-600 to-pink-600 rounded-full px-4 border-2 text-white font-bold border-black">00</span>
+        <span class="text-3xl">:</span>
+        <span id="seconds" class="py-4 px-4 bg-gradient-to-l from-purple-600 to-pink-600 font-bold text-white border-2 rounded-full border-black">00</span>
+      </h1>
+    <form>
+        <input id="input" type="number" class="mt-7 text-black rounded-full w-20 h-10 border-2 border-black" placeholder="">
+    </form>
+    <div class="flex justify-center mt-7">
+        <p id="start" class="w-32 h-12 bg-gradient-to-l from-purple-600 to-pink-600 text-white hover:bg-purple-600 rounded-full pt-2 font-bold cursor-pointer">Start</p>
+    </div>
+    </div>
+</div>
+</body>
+<script>
+ const startBtn = document.getElementById("start");
+    const input = document.getElementById("input");
+    const minutesDisplay = document.getElementById("minutes");
+    const secondsDisplay = document.getElementById("seconds");
+    let countdown;
+
+    startBtn.addEventListener("click", () => {
+      let minutesInput = parseInt(input.value);
+
+      let timeInSeconds = minutesInput * 60;
+
+      clearInterval(countdown);
+
+      countdown = setInterval(() => {
+        let minutes = Math.floor(timeInSeconds / 60);
+        let seconds = timeInSeconds % 60;
+
+        minutesDisplay.textContent = String(minutes).padStart(2, "0");
+        secondsDisplay.textContent = String(seconds).padStart(2, "0");
+
+        timeInSeconds--;
+      }, 1000);
+    });
+</script>
+</html>
