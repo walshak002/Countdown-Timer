@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="./style.css">
     <title>Countdown</title>
 </head>
-<!-- Create a countdown timer using HTML, CSS, and JavaScript.
-1. User should put the time (in minutes) and click start
-2. The timer starts counting down. It should stop when the time ends -->
 <body class="bg-gradient-to-r from-indigo-500 to-sky-400">
     <div class="flex justify-center mt-28 rounded-2xl w-[500px] h-[500px] bg-blue-500 border-2 mx-auto">
     <div class="text-center">
@@ -25,7 +22,7 @@
         <span id="seconds" class="py-4 px-4 bg-gradient-to-l from-purple-600 to-pink-600 font-bold text-white border-2 rounded-full border-black">00</span>
       </h1>
     <form>
-        <input id="input" type="number" class="mt-7 text-black rounded-full w-20 h-10 border-2 border-black" placeholder="">
+        <input id="input" type="number" class="mt-7 text-black px-4 rounded-full w-20 h-10 border-2 border-black" placeholder="">
     </form>
     <div class="flex justify-center mt-7">
         <p id="start" class="w-32 h-12 bg-gradient-to-l from-purple-600 to-pink-600 text-white hover:bg-purple-600 rounded-full pt-2 font-bold cursor-pointer">Start</p>
@@ -34,7 +31,7 @@
 </div>
 </body>
 <script>
- const startBtn = document.getElementById("start");
+    const startBtn = document.getElementById("start");
     const input = document.getElementById("input");
     const minutesDisplay = document.getElementById("minutes");
     const secondsDisplay = document.getElementById("seconds");
@@ -43,7 +40,7 @@
     startBtn.addEventListener("click", () => {
       let minutesInput = parseInt(input.value);
 
-      let timeInSeconds = minutesInput * 60;
+      let timeInSeconds = minutesInput * 60;md:
 
       clearInterval(countdown);
 
@@ -59,3 +56,20 @@
     });
 </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+Aynchronous
+Syncronous
+
+
+-->
